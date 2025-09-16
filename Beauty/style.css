@@ -1,0 +1,439 @@
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;background:#fff}
+.site-header, header, nav.desktop-nav {
+  height: auto !important;
+  min-height: 0 !important;
+  padding-top: .75rem !important;
+  padding-bottom: .75rem !important;
+}
+.desktop-nav{display:flex;gap:1rem}
+.hamburger{display:none;background:none;border:0;font-size:1.25rem;padding:.5rem;cursor:pointer}
+
+/* Mobile drawer off-canvas */
+.mobile-drawer{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);background:#fff;display:grid;gap:.75rem;
+  padding:1rem;transform:translateX(100%);transition:transform .25s ease;box-shadow:-10px 0 30px rgba(0,0,0,.08)}
+.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.25);opacity:0;transition:opacity .2s ease}
+
+body.mobile-open .mobile-drawer{transform:translateX(0)}
+body.mobile-open .backdrop{opacity:1}
+
+/* 🔑 Breakpoint: hide desktop menu, show hamburger */
+@media (max-width:768px){
+  .desktop-nav{display:none}         /* desktop links disappear on mobile */
+  .hamburger{display:inline-flex}    /* hamburger appears */
+}
+
+/* Optional: prevent topbar overlap on small screens */
+@media (max-width:768px){
+  .site-header{flex-wrap:wrap;row-gap:.5rem}
+}
+/*it must override*/
+/* Normalize header/nav height */
+.site-header, header, nav.desktop-nav {
+  height: auto !important;
+  min-height: 0 !important;
+  padding-top: .75rem !important;
+  padding-bottom: .75rem !important;
+}
+
+/* Make desktop menu a tight horizontal row */
+nav.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+/* Keep links compact */
+nav.desktop-nav a {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 45px;
+  padding: .5rem 0;
+  line-height: 1.2;
+  white-space: nowrap;   /* prevents “Book Now” breaking onto two lines */
+}
+
+/* Hide desktop menu on phones; show hamburger if you have one */
+@media (max-width: 768px) {
+  nav.desktop-nav { display: none !important; }
+  .hamburger { display: inline-flex !important; }
+}
+
+/* If you built a mobile drawer, ensure it only shows when opened */
+.mobile-drawer[hidden] { display: none !important; }
+.site-header {
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically */
+  height: 60px;
+  background: #fff;
+}
+
+.hamburger {
+  font-size: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+
+
+body{
+    margin: 0;
+}
+#head1{
+    min-height: 40px;
+    background-color: lightgrey;
+    padding-top: 10px;
+    display: inline-block;
+}
+a:link{
+    text-decoration: none;
+    padding: 150px;
+    color: black;
+
+}
+#head1 a{
+    color: black;
+}
+a:hover{
+    color: black;
+}
+#p1 span{
+    color: tomato;
+    font-weight: bold;
+
+}
+#a1{
+    color: tomato !important;
+    font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  #head1 {
+    display: none !important;
+  }
+}
+.head2{
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 0px 0px 12px 12px;
+    margin-top: 0;
+}
+.head2 img{
+    height: 20px;
+    width: 20px;
+    align-items: center;
+}
+.logo-icons{
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+
+.video-background {
+  position: relative;
+  height: 80vh;  /* Full screen height */
+  width: 100%;
+  overflow: hidden;
+  opacity: 0.7 black;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Ensures video covers the screen */
+  z-index: -1; /* Push video behind content */
+   background: rgba(0,0,0,0.5)
+}
+
+.video-background .content {
+  position: relative;
+  z-index: 1;
+  color: white; /* Text visible on dark background */
+  text-align: center;
+  top: 40%;
+  color: black;
+  font-weight: bolder;
+}
+.video-background .content h1{
+    font-weight: bolder;
+}
+.cta {
+  display: inline-block;      /* shrink to fit text */
+  background: var(--accent);
+  color: #fff;
+  background-color: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;            /* smaller text */
+  padding: 8px 18px !important;          /* tighter padding */
+  border-radius: 30px;        /* pill shape, not a circle */
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+#page2{
+    text-align: center;
+    font-size: 36px;
+    text-decoration: underline;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+/* --- Layout: responsive grid --- */
+.card-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); /* flex to fit */
+  gap:1rem;
+  padding:1rem;
+}
+
+/* --- Card --- */
+.card1{
+  display:flex;
+  flex-direction:column;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+  overflow:hidden;            /* keep image + content inside rounded corners */
+}
+
+/* --- Image scales correctly --- */
+.card1 > img{
+  width:100%;
+  aspect-ratio: 16 / 9;       /* pick a ratio you like */
+  object-fit:cover;
+  display:block;
+}
+
+/* --- Content --- */
+.card-content{
+  padding:1rem;
+}
+
+.card-content h1{
+  margin:0 0 .75rem;
+  font-weight:700;
+  /* scale title across sizes so it doesn't explode on phones */
+  font-size:clamp(1.1rem, 5.5vw, 1.6rem);
+  line-height:1.2;
+  word-break:break-word;
+  hyphens:auto;
+}
+
+.card-content button{
+  display:inline-block;
+  padding:.85rem 1rem;
+  border:0;
+  border-radius:12px;
+  background:#000;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* --- Small screens: single column + comfy buttons --- */
+@media (max-width:600px){
+  .card-container{ grid-template-columns:1fr; }
+  .card-content button{ width:100%; } /* full-width tap target */
+}
+
+
+.page3{
+    background-image:  url(/images/spa-853462_1280.jpg);
+    height: 60vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+
+}
+.page3 h1{
+    position: absolute;
+    align-items: center;
+    padding-top: 150px;
+    padding-left: 300px;
+     z-index: 1;
+     font-size: 36px;
+      top: 50%;             /* push halfway down */
+  left: 50%;            /* push halfway right */
+  transform: translate(-50%, -50%); /* perfectly centre */
+  text-align: center;
+  color: #fff;
+  padding: 0 10px;   
+     font-size: clamp(16px, 4vw, 32px);
+}
+.page3 button{
+    position: absolute !important;
+}
+#but1{
+    position: relative;
+    margin-top: 250px;
+    align-items: center;
+    margin-left: 650px;
+    height: 50px;
+}
+/* Base */
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:#111; }
+
+
+.hero {
+  display: grid;
+  gap: 16px;
+  padding: 20px 16px;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+.hero__media img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+.hero__content h3 { margin: 0 0 6px; font-weight: 600; color: #555; }
+.hero__content h1 { 
+  margin: 0 0 10px;
+  font-size: clamp(22px, 6vw, 40px);   /* scales nicely on phones */
+  line-height: 1.2;
+}
+.hero__content p { margin: 0 0 16px; max-width: 60ch; }
+.btn {
+  display: inline-block;
+  padding: 12px 16px;
+  min-height: 44px;                 /* comfortable tap target */
+  border: 0;
+  border-radius: 10px;
+  background: #111; color: #fff;
+}
+:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+
+/* Tablet+ two-column layout */
+@media (min-width: 768px) {
+  .hero { grid-template-columns: 1fr 1fr; align-items: center; gap: 24px; }
+}
+
+/* Larger screens: tighten and balance */
+@media (min-width: 1024px) {
+  .hero { gap: 32px; padding: 40px 24px; }
+  .hero__content h1 { font-size: clamp(28px, 4vw, 48px); }
+}
+
+/* Base */
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:#111; }
+
+
+/* Section */
+.shop {
+  display: grid;
+  gap: 16px;
+  padding: 20px 16px;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+/* Image */
+.shop__media img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;          /* keeps it proportional on phones */
+}
+
+/* Text */
+.shop__content h1 {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 6vw, 38px);  /* scales nicely on small screens */
+  line-height: 1.2;
+}
+
+.shop__item { margin: 0 0 12px; }
+.shop__item h2 {
+  margin: 0 0 6px;
+  font-size: clamp(18px, 4.5vw, 24px);
+}
+.shop__item p { margin: 0; max-width: 65ch; }
+
+.cta {
+  display: inline-block;      /* shrink to fit text */
+  background: var(--accent);
+  color: white;
+  background-color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;            /* smaller text */
+  padding: 8px 18px !important;          /* tighter padding */
+  border-radius: 30px;        /* pill shape, not a circle */
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+
+.cta:hover{transform:translateY(-1px); box-shadow:0 10px 22px rgba(0,0,0,.16)}
+.cta:active{transform:translateY(0); opacity:.9}
+
+/* Tablet and up: split into two columns */
+@media (min-width: 768px) {
+  .shop {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+/* Desktop: a bit roomier */
+@media (min-width: 1024px) {
+  .shop { gap: 32px; padding: 40px 24px; }
+  .shop__content h1 { font-size: clamp(28px, 4vw, 48px); }
+}
+
+/* Footer container */
+.page5{
+  background:#555;           /* matches your grey */
+  color:#fff;
+  display:flex;
+  flex-direction:column;     /* stack on phones */
+  align-items:center;        /* center the links */
+  gap:8px;                   /* space between links */
+  padding:16px;
+  border-top:1px solid rgba(255,255,255,.2);
+}
+
+/* Links: big tap targets */
+.page5 a{
+  color:#fff;
+  text-decoration:none;
+  padding:10px 12px;         /* comfy click area */
+  min-height:44px;           /* mobile tap size */
+  border-radius:8px;
+}
+.page5 a:hover{text-decoration:underline;}
+.page5 a:focus-visible{outline:2px solid #fff; outline-offset:2px;}
+
+/* Tablet and up: put links in one row */
+@media (min-width: 600px){
+  .page5{ 
+    flex-direction:row;
+    justify-content:center;  /* center horizontally */
+    gap:24px;
+  }
+}
+
+/* Wide screens: center within a max width */
+@media (min-width: 1024px){
+  .page5{
+    max-width:1100px;
+    margin:0 auto;
+    padding:20px 24px;
+    justify-content:space-between;
+  }
+}
+
+
+.page6 p{
+    text-align: center;
+}
+

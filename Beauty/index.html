@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rester Beauty</title>
+    <link rel="icon" href="/images/''.png">
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+<body>
+    <section>
+ <header>
+        <div id="head1">
+        
+            <a href="#">📞 071 234 5678</a>
+            <a href="newsletter.html" id="p1" target="_blank">Sign up to our newsletter <span>here</span></a>
+            <a href="/book.html" id="a1">Book Now</a>
+            
+        </div>
+       
+        <div class="head2">
+            <div class="social-icons">
+ <img src="/images/facebook-brands-solid-full (1).svg" alt="">
+            <img src="/images/instagram.png" alt="">
+            <img src="/images/tiktok.png" alt="">
+            </div>
+           <div class="logo-icons">
+            <p>Rester Beauty💄</p>
+
+           </div>
+           <div class="mail-icons">
+            <img src="/images/envelope-solid-full.svg" alt="">
+           </div>
+     
+      
+   
+
+        </div>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<header class="site-header">
+  
+
+  <!-- Hamburger (mobile only) -->
+  <button
+    class="hamburger"
+    id="menuBtn"
+    aria-label="Open menu"
+    aria-controls="mobileMenu"
+    aria-expanded="false">
+    ☰
+  </button>
+
+  <!-- Desktop nav -->
+  <nav class="desktop-nav" aria-label="Main">
+    <a href="/index.html">Home</a>
+    <a href="/book.html">Book Now</a>
+    <a href="/promo.html">Promos</a>
+    <a href="/corporate.html">Corporate Offerings</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/corporate.html">Shop</a>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <nav id="mobileMenu" class="mobile-drawer" aria-label="Mobile" hidden>
+    <a href="/">Home</a>
+    <a href="/book.html">Book Now</a>
+    <a href="/promo.html">Promos</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/corporate.html">Shop</a>
+  </nav>
+
+  <!-- Backdrop -->
+  <div id="backdrop" class="backdrop" hidden></div>
+</header>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('menuBtn');
+  const drawer = document.getElementById('mobileMenu');
+  const backdrop = document.getElementById('backdrop');
+
+  function openMenu() {
+    document.body.classList.add('mobile-open');
+    drawer.hidden = false;
+    backdrop.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    drawer.querySelector('a')?.focus();
+    document.body.style.overflow = 'hidden';   // prevent background scroll
+  }
+
+  function closeMenu() {
+    document.body.classList.remove('mobile-open');
+    btn.setAttribute('aria-expanded', 'false');
+    backdrop.hidden = true;
+    // delay hiding drawer until animation ends
+    setTimeout(() => { drawer.hidden = true; }, 200);
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    open ? closeMenu() : openMenu();
+  });
+
+  backdrop.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+});
+</script>
+
+            <div class="video-background">
+  <video autoplay muted loop playsinline>
+    <source src="/Videos/Untitled design (2).mp4" type="video/mp4">
+    Your browser does not support the video tag.
+   
+  </video>
+ <div class="content">
+    <h1>WELCOME TO RESTER BEAUTY 💄</h1>
+    <a class="cta" href="/book.html">Claim Offer</a>
+  </div>
+  
+</div>
+<br><br>
+<h1 id="page2">DISCOVER THE ULTIMATE AFRICAN SPA EXPERIENCE</h1>
+<div class="card-container">
+<div class="card1">
+    
+    <img src="/images/woman-6557552_1280.jpg" alt="Woman at Spa">
+    <div class="card-content">
+        <h1>Visit a Branch</h1>
+        <button>Visit</button>
+
+    </div>
+    
+</div>
+
+<div class="card1">
+    
+    <img src="/images/nail-art-5653459_1280.jpg" alt="Woman at Spa">
+    <div class="card-content">
+        <h1>Promotions</h1>
+        <button>Buy</button>
+
+    </div>
+    
+</div>
+<div class="card1">
+    
+    <img src="/images/hotel-6862159_1280.jpg" alt="Woman at Spa">
+    <div class="card-content">
+        <h1>Stay at Spa</h1>
+        <button>Book</button>
+
+    </div>
+    
+</div>
+<div class="card1">
+    
+    <img src="/images/ai-generated-8369776_1280.png" alt="Woman at Spa">
+    <div class="card-content">
+        <h1>Study at our College</h1>
+        <button>Study</button>
+
+    </div>
+    
+</div>
+</div>
+<br><br>
+<section class="hero" aria-labelledby="about-title">
+  <div class="hero__media">
+    <img
+      src="/images/restaurant-6784529_1280.jpg"
+      alt="Calm spa ambience with candles and towels"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="hero__content">
+    <h3>About Us</h3>
+    <h1 id="about-title">More Than a Spa — It’s a Sanctuary</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates…
+    </p>
+    <button class="btn">Our Story</button>
+  </div>
+</section>
+<br><br><br>
+
+<div class="page3">
+  <a href="/promo.html"><h1 >We host teams from SA’s top companies for unforgettable spa days</h1></a>
+    
+    <button id="but1">Book for Corporate</button>
+    
+
+</div>
+<br><br><br><br>
+<section class="shop" aria-labelledby="shop-title">
+  <div class="shop__media">
+    <img
+      src="/images/spa-2652009_1280.jpg"
+      alt="Spa products on a shelf"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="shop__content">
+    <h1 id="shop-title">Shop</h1>
+
+    <article class="shop__item">
+      <h2>Our New Blackberry Lotion</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis id odio illo delectus…</p>
+    </article>
+
+    <article class="shop__item">
+      <h2>Shop Balance Bath &amp; Lotion</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore vitae qui…</p>
+    </article>
+
+    <a class="cta" href="/promo.html">Shop Now</a>
+  </div>
+</section>
+
+<br><br>
+<footer>
+    <div class="page5">
+        <a href="/promo.html">Promotions</a>
+        <a href="/corporate.html">Corporate Offerings</a>
+    </div>
+    <div class="page6">
+        <p>Copyright &copy; 2025 Rester Beauty. All Rights reserved</p>
+
+    </div>
+</footer>
+
+
+
+           
+    </section>
+   
+</body>
+</html>

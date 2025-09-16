@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now</title>
+    <link rel="stylesheet" href="/book.css">
+</head>
+<body>
+    <div class="book1">
+<h1>Rester Beauty💄</h1>
+        <h2>
+            Please fill in and submit the form below to subscribe to our mailing list.
+        </h2>
+        <form action="index.php" method="post">
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name = "name" required><br>
+            <label for="surname">Surname</label><br>
+            <input type="surname" id="surname" name = "surname" required>
+            <br>
+            <label for="email">Email</label><br>
+            <input type="text" id="email" name = "email" required>
+            <p>Gender</p>
+            <input type="radio" id="male">
+            <label for="male" id="male" name="gender" value="male">Male</label><br>
+            <input type="radio" id="female">
+            <label for="female" id="female" name="gender" value="female">Female</label>
+            <p>Type of news you will like</p>
+            <input type="checkbox" id="promotion">
+            <label for="promotion">Promotion</label><br>
+            <input type="checkbox" id="college">
+            <label for="college">College</label><br>
+            <input type="checkbox" id="couple">
+            <label for="couple">Couple Treats</label><br>
+            <input type="checkbox" id="products">
+            <label for="products">New Products</label><br><br>
+            <button id="ourBtn">Submit</button>
+<script>
+    const btn = document.getElementById("ourBtn");
+    btn.onclick = function() {
+      alert("Thanks for signing up to our newsletter!");
+    };
+  </script>
+
+
+        
+        </form>
+    </div>
+</body>
+</html>
